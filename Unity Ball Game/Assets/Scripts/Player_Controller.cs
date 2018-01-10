@@ -3,8 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player_Controller : MonoBehaviour {
-    /*void FixedUpdate()
+	
+	private Rigidbody sphereRB;
+	
+	void Start()
+	{
+		sphereRB = GetComponent<Rigidbody>();
+	}
+	
+	void FixedUpdate()
     {
-        Input
-    }*/
+        float moveHorizontal = Input.GetAxis("Horizontal");
+		float moveVertical = Input.GetAxis("Vertical");
+		
+		Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
+		
+		sphereRB.AddForce(movement);
+    }
 }
