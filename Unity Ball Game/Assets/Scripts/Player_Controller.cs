@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Controller : MonoBehaviour {
 	
+	public float speed;
 	private Rigidbody sphereRB;
 	
 	void Start()
@@ -18,6 +19,6 @@ public class Player_Controller : MonoBehaviour {
 		
 		Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
 		
-		sphereRB.AddForce(movement);
+		sphereRB.AddForce(movement * speed);
     }
 }
